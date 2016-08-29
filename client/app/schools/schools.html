@@ -1,0 +1,18 @@
+<div class='navigation'>
+<ul>
+  <li><a href='#/schools' class='index'>Favorite List</a></li>
+  <li><a href='#/addSchool' class='create'>Add School</a></li>
+</ul>
+  <a href='#/logout' class='logout'>Logout</a>
+</div>
+
+<div id='container'>
+  <form name='addSchoolForm' ng-submit='addSchool()'>
+    <input class='text' type='text' name="school" ng-model='search'>
+    <button ng-disabled="addSchoolForm.$invalid">Filter</button>
+  </form>
+  <div ng-repeat="school in data.schools">
+    <div class='info'>
+    <div class='name'>{{school.name}}</div>
+  </div>
+</div>

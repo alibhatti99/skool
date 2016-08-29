@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="skool">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Skool'd</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="app/auth/auth.js"></script>
+  <script src="app/links/links.js"></script>
+  <script src="app/shorten/shorten.js"></script>
+  <script src="app/services/services.js"></script>
+  <script src="app/app.js"></script>
+  <script src="/test-controller.js"></script>
+  <script src="app/sup/supController.js"></script>
+</head>
+<body>
+  <h1 class="title">Get Skool'd</h1>
+  <div class="navigation"><a href="#">Home</a></div>
+  <div class="navigation"><a href="#test">Test Page</a></div>
+  <div class="navigation"><a href="#/sup">Sup Page</a></div>
+  <div class="navigation"><a href="#addSchool">Add a School</a></div>
+  <div class="navigation"><a href="#favorites">Favorite List</a></div>
+
+<div ng-controller="supController">{{homie}}</div>
+<div ng-controller="famController">{{rabia}}</div>
+<div ng-controller="dadController">{{ali}}</div>
+<div ng-controller="theKidsController">
+  <div ng-click="changeName()">{{daughter}}</div>
+</div>
+
+<div ng-view></div>
+
+
+</body>
+</html>

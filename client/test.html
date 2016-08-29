@@ -1,0 +1,84 @@
+<div id='test'>
+  <h1 class="bismillah">Bismillah!</h1>
+  <div class="bismillah">
+    Allahumma Salli ala Syedinna Muhammad!
+    Sal Allahu alaihi wa salam!
+  </div>
+
+  <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+  <div ng-view></div>
+
+ <!--  <div ng-controller="Cat">
+    <p>Enter Name: <input type="text" ng-model = "dog"> </p>
+    <p ng-bind="dog"></p>
+  </div> -->
+  <p class="big"> Controller Demo </p>
+  <div ng-controller="Cat">
+    <p>My name is: {{me}} </p>
+    <p>My wife's name is: {{wife}} </p>
+    <p>So... {{dog}} </p>
+    <div ng-controller="Habib">
+      <p>Habib's advice: {{advice}} </p>
+      <p>Habib is {{age}} years old </p>
+      <p> Habib says {{advice}} so lets practice this.. {{dog}} </p>
+    </div>
+  </div>
+
+  <div class="repeater">
+    <p class="big"> Repeater Demo </p>
+    <span>Enter Name: <input type="text" ng-model="fName"></span>
+    <span>You wrote: {{fName}}</span>
+  </div>
+
+  <p class="big"> Calculator Demo </p>
+  <div class="mathematics">
+    Quantity: <input type="number"  ng-model="quantity">
+    Costs:    <input type="number" ng-model="price">
+    Total in dollar: {{ quantity * price }}
+  </div>
+
+  <p class="big"> ng-repeat Demo </p>
+  <div ng-init="names=[{name:'Ali', age:33},{name:'Rabia', age:31},{name:'Fatima', age:7}]">
+    <ul>
+      <li ng-repeat="x in names"> {{x.name}} is {{x.age}} years old. </li>
+    </ul>
+  </div>
+
+  <p class="big"> 2-Way Data Binding Demo </p>
+  <div ng-controller="Cat">
+    Wife's Name: <input type="text" ng-model="wife">
+    <h3>You entered: {{wife}} </h3>
+  </div>
+
+  <p class="big"> Form Validation Demo </p>
+  <form name="contactForm">
+    <div> Url: <input type="url" name="contactAge" ng-model="ageData" > </div>
+    <span class="error" ng-show="contactForm.contactAge.$error.url">Not a valid url</span>
+    <div> Email: <input type="email" name="contactEmail" ng-model="emailData"> </div>
+    <span class="error" ng-show="contactForm.contactEmail.$error.email">Not a valid email address</span>
+  </form>
+  <div>
+    <p> Contact Info </p>
+    <div> Age: {{ageData}} </div>
+    <div> Email: {{emailData}} </div>
+  </div>
+
+  <p class="big"> 2-Way Data Binding with Functions Demo </p>
+  <div ng-controller="Kids">
+    <div ng-click="changeName()"> {{daughter}} </div>
+    <div ng-click="showKids()"> {{mykids}} </div>
+    <ul>
+      <li ng-repeat="name in family">{{name}}</li>
+    </ul>
+  </div>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="app/auth/auth.js"></script>
+  <script src="app/links/links.js"></script>
+  <script src="app/shorten/shorten.js"></script>
+  <script src="app/services/services.js"></script>
+  <script src="app/app.js"></script>
+  <script src="test-controller.js"></script>
+
+</div>
