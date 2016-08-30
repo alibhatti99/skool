@@ -1,8 +1,10 @@
-angular.module('skool', ['ui.router', 'skool.supController'])
-// .config(function ($routeProvider, $httpProvider) {
+angular.module('skool', [
+  'ui.router',
+  'skool.supController',
+  'skool.test'
+  ])
   .config(function ($stateProvider, $urlRouterProvider) {
-    // $urlRouterProvider.otherwise("/sup/");
-    //$urlRouterProvider.otherwise("/skool/");
+    $urlRouterProvider.otherwise('/home');
     $stateProvider
       .state('sup', {
         url: "/sup",
@@ -22,12 +24,12 @@ angular.module('skool', ['ui.router', 'skool.supController'])
         controller: 'Habib',
         controller: 'Kids'
       })
-  })
-  .run(function($rootScope){
-    $rootScope.$on('$stateChange', function(){
-      console.log('STATE HAS CHANGED!!!');
-    })
   });
+  // .run(function($rootScope){
+  //   $rootScope.$on('$stateChange', function(){
+  //     console.log('STATE HAS CHANGED!!!');
+  //   })
+  // });
 
 
 
