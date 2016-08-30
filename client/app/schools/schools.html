@@ -1,26 +1,16 @@
+<div class="container" ng-controller="addSchoolsController">
 
-
-<div id='container'>
-  <form name='addSchoolForm' ng-submit='addSchool()'>
-    <input class='text' type='text' name="school" ng-model='search'>
-    <button ng-disabled="addSchoolForm.$invalid">Filter</button>
-  </form>
-  <div ng-repeat="school in data.schools">
-    <div class='info'>
-    <div class='name'>{{school.name}}</div>
+  <div class="input-group input-group-lg">
+    <span class="input-group-addon" id="sizing-addon1">Filter</span>
+    <input type="text" class="form-control" placeholder="School" aria-describedby="sizing-addon1" ng-model="inputFilter">
   </div>
-</div>
 
+  <div class="list-group">
+    <a href="#" class="list-group-item active">
+      Favorite Schools
+    </a>
+    <a href="#" class="list-group-item"
+    ng-repeat="school in list | orderBy | filter: inputFilter">{{school}}</a>
+  </div>
 
-<div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">Filter</span>
-  <input type="text" class="form-control" placeholder="School" aria-describedby="sizing-addon1">
-</div>
-
-
-<div class="list-group" ng-controller="addSchoolsController">
-  <a href="#" class="list-group-item active">
-    Favorite Schools
-  </a>
-  <a href="#" class="list-group-item">{{list}}</a>
 </div>
