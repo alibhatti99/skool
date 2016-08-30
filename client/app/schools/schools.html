@@ -9,8 +9,15 @@
     <a href="#" class="list-group-item active">
       Favorite Schools
     </a>
-    <a href="#" class="list-group-item"
+    <a href = "#" ng-click="display()" class="list-group-item"
     ng-repeat="school in list | orderBy | filter: inputFilter">{{school}}</a>
   </div>
 
+  <div> {{displayTitle}} </div>
+  <div> {{dhikr}}</div>
+
 </div>
+
+
+
+

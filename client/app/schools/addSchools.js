@@ -25,12 +25,17 @@ angular.module('skool.addSchools', [])
     return service;
   })
   .controller('addSchoolsController', function($scope, $state, schoolFactory){
+    $scope.dhikr = '';
     $scope.schoolName = '';
     $scope.updateList = function() {
       schoolFactory.submitSchool($scope.schoolName);
       $state.go('favorites');
     };
     $scope.list = schoolFactory.getSchools();
+    $scope.display = function() {
+      $scope.displayTitle = 'Demographics for Selected School';
+      $scope.dhikr = 'Allllllahhhh';
+    }
   });
 
 
