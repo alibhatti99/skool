@@ -1,7 +1,9 @@
 angular.module('skool.schools', [])
 
-.controller('SchoolsController', function ($scope, Links) {
+.controller('schoolsController', function ($scope, Links) {
   $scope.data = {};
+
+  $scope.ally = 'Ahmad Ally';
 
   Schools.getAll()
     .then(function (schools) {
