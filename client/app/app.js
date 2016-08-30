@@ -14,7 +14,8 @@ angular.module('skool', [
       })
       .state('home' , {
         url: "/home",
-        templateUrl: "../pages/home.html"
+        templateUrl: "../pages/home.html",
+        controller: 'locationController'
       })
       .state('test' , {
         url: "/test",

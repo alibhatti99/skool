@@ -9,8 +9,20 @@
 
 </head>
 <body>
-  <h1 class="title">Get Skool'd</h1>
 
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="https://katherinelhunt.files.wordpress.com/2013/03/skoold-black.png" style="width:80px;height:20px">
+      </a>
+      <button type="button" class="btn btn-default navbar-btn" ui-sref="sup">Add School</button>
+      <button type="button" class="btn btn-default navbar-btn" ui-sref="test">Favorites</button>
+      <button type="button" class="btn btn-default navbar-btn" ui-sref="sup">Sup</button>
+      <button type="button" class="btn btn-default navbar-btn" ui-sref="test">Test</button>
+    </div>
+  </div>
+  </nav>
 
   <div ui-view></div>
 
@@ -19,6 +31,7 @@
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="pages/test-controller.js"></script>
+  <script src="pages/home-controller.js"></script>
   <script src="app/sup/supController.js"></script>
   <script src="app/app.js"></script>
 
