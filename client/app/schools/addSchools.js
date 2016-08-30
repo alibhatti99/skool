@@ -28,9 +28,9 @@ angular.module('skool.addSchools', [])
     $scope.schoolName = '';
     $scope.updateList = function() {
       schoolFactory.submitSchool($scope.schoolName);
+      $state.go('favorites');
     };
     $scope.list = schoolFactory.getSchools();
   });
 
 
-  // $state.go('favorites');
