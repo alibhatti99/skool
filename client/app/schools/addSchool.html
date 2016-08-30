@@ -10,13 +10,13 @@
   </pre>
 </div> -->
 
-<form ng-submit="submit()" ng-controller="addSchoolsController">
+<form ng-submit="updateList()" ng-controller="addSchoolsController">
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon3">Eg. Bella Vista Elementary</span>
     <input class="form-control" type="text" ng-model="schoolName" name="text" />
     <input class="form-control" type="submit" id="submit" value="Submit" />
   </div>
-  <pre>Added Schools: {{list}}</pre>
+  <pre> Added Schools: {{list}}</pre>
 </form>
 
 

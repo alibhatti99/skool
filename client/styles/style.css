@@ -169,3 +169,7 @@ input[type=url]:focus {
   margin: 20px;
   background-color: #FFF2E0;
 }
+.favorites {
+  padding: 200px;
+  margin: 200px;
+}
