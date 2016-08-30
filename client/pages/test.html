@@ -5,13 +5,6 @@
     Sal Allahu alaihi wa salam!
   </div>
 
-  <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-  <div ng-view></div>
-
- <!--  <div ng-controller="Cat">
-    <p>Enter Name: <input type="text" ng-model = "dog"> </p>
-    <p ng-bind="dog"></p>
-  </div> -->
   <p class="big"> Controller Demo </p>
   <div ng-controller="Cat">
     <p>My name is: {{me}} </p>
@@ -70,6 +63,11 @@
     <ul>
       <li ng-repeat="name in family">{{name}}</li>
     </ul>
+  </div>
+
+  <p class="big"> Testing out Main Controller </p>
+  <div ng-controller="mainController">
+    <div> {{ message }} </div>
   </div>
 
   <script src="lib/angular/angular.js"></script>

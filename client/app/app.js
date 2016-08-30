@@ -1,20 +1,36 @@
-angular.module('skool', ['ngRoute', 'skool.supController'])
+angular.module('skool', ['ui.router', 'skool.supController'])
 // .config(function ($routeProvider, $httpProvider) {
-  .config(function ($routeProvider) {
-  $routeProvider
-    .when('/', {
-      templateURL: '../pages/home.html'
+  .config(function ($stateProvider, $urlRouterProvider) {
+    // $urlRouterProvider.otherwise("/sup/");
+    //$urlRouterProvider.otherwise("/skool/");
+    $stateProvider
+      .state('sup', {
+        url: "/sup",
+        templateUrl: "app/sup/sup.html",
+        controller: 'supController',
+        controller: 'famController'
+      })
+      .state('home' , {
+        url: "/home",
+        templateUrl: "../pages/home.html"
+      })
+      .state('test' , {
+        url: "/test",
+        templateUrl: "../pages/test.html",
+        controller: 'mainController',
+        controller: 'Cat',
+        controller: 'Habib',
+        controller: 'Kids'
+      })
+  })
+  .run(function($rootScope){
+    $rootScope.$on('$stateChange', function(){
+      console.log('STATE HAS CHANGED!!!');
     })
-    .when('/test', {
-      templateURL: '../test.html',
-      // try adding more controllers if this works
-    })
-    .when('/sup', {
-      templateURL: 'app/sup/sup.html',
-    })
-    .otherwise('/', {
-      redirectTo: '/sup'
-    })
+  });
 
-});
+
+
+
+
 

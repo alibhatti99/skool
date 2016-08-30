@@ -8,13 +8,7 @@ module.exports = function (app, express) {
     res.send('Whats good world!!');
   });
 
-  app.get('/yo', function(req,res){
-    res.send('YOOOOOOOOOOOOOO');
-  });
 
-  app.get('/takbir', function(req, res) {
-    res.send('God is the Greatest!!!');
-  });
 
 
   // app.post('/api/users/signin', userController.signin);

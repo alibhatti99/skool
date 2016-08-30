@@ -10,37 +10,20 @@
 </head>
 <body>
   <h1 class="title">Get Skool'd</h1>
-  <div class="navigation"><a href="#test">Test Page</a></div>
-  <div class="navigation"><a href="#/sup">Sup Page</a></div>
-  <div class="navigation"><a href="#addSchool">Add a School</a></div>
-  <div class="navigation"><a href="#favorites">Favorite List</a></div>
 
-<div ng-controller="ButtonsCtrl">
-  <h4>Toggle Example</h4>
-  <pre>{{singleModel}}</pre>
-  <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
-      Single Toggle
-  </button>
-</div>
+  <a ui-sref="sup">Sup Page</a>
+  <a ui-sref="home">Home Page</a>
+  <a ui-sref="test">Test Page</a>
 
-
-
-<div ng-controller="supController">{{fsho}}</div>
-<div ng-controller="famController">{{rabia}}</div>
-<div ng-controller="dadController">{{ali}}</div>
-<div ng-controller="theKidsController">
-  <div ng-click="changeName()">{{daughter}}</div>
-</div>
-
-<div id="main">
-  <div ng-view></div>
-</div>
+  <div ui-view></div>
 
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="lib/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="/test-controller.js"></script>
   <script src="app/sup/supController.js"></script>
   <script src="app/app.js"></script>
+
 </body>
 </html>
