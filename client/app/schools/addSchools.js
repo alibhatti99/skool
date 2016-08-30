@@ -3,6 +3,7 @@ angular.module('skool.addSchools', [])
     var service = {};
 
     var hero = 'batman';
+    var superhero = 'superman';
 
     service.schoolName = '';
     list = [];
