@@ -23,12 +23,30 @@ angular.module('skool.addSchools', [])
       return list;
     }
 
-    var makeUrl = function() {
+    var currentSchool = '';
+    service.setCurrentSchool = function (school) {
+      currentSchool = school;
+    }
+
+    var baseUrl = 'http://api.greatschools.org/search/schools?key=kecrlimecxxkwfwwbtyjagxx&state=CA&q=';
+    var endUrl = '&sort=alpha&levelCode=elementary-schools&limit=10';
+    var finalUrl = '';
+
+    var makeSearchUrl = function() {
+      currentSchool = currentSchool.split(' ').join('+');
+      finalUrl = baseUrl + currentSchool + endUrl;
+      return finalUrl;
+    }
+    var makeDemoUrl = function() {
 
     }
 
-    service.callGreatSchools = function() {
-      makeUrl();
+    service.callGreatSchoolsSearch = function() {
+      makeSearchUrl();
+    }
+
+    service.callGreatSchoolsDemo = function() {
+      makeDemoUrl();
     }
     return service;
   })
@@ -42,7 +60,7 @@ angular.module('skool.addSchools', [])
     $scope.list = schoolFactory.getSchools();
     $scope.display = function(school) {
       $scope.displayTitle = 'Demographics for ' + school;
-      $scope.daSchool = school;
+      schoolFactory.setCurrentSchool(school);
     }
   });
 
