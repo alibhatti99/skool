@@ -25,9 +25,9 @@ app.all("/api/*", function (req, res, next) {
   return next();
 });
 
-// start listening to requests on port 3000
-app.listen(3000, function () {
-  console.log('SKOOL APP izzz listening on port 3000!');
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log('SKOOL APP izzz listening on port' + port + '!!!');
 });
 
 // export our app for testing and flexibility, required by index.js
