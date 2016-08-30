@@ -1,5 +1,5 @@
 angular.module('skool.addSchools', [])
-  .factory('schoolFactory', function(){
+  .factory('schoolFactory', function($http, $q){
     var service = {};
 
     var hero = 'batman';
@@ -22,6 +22,14 @@ angular.module('skool.addSchools', [])
     service.getSchools = function() {
       return list;
     }
+
+    var makeUrl = function() {
+
+    }
+
+    service.callGreatSchools = function() {
+      makeUrl();
+    }
     return service;
   })
   .controller('addSchoolsController', function($scope, $state, schoolFactory){
@@ -32,9 +40,9 @@ angular.module('skool.addSchools', [])
       $state.go('favorites');
     };
     $scope.list = schoolFactory.getSchools();
-    $scope.display = function() {
-      $scope.displayTitle = 'Demographics for Selected School';
-      $scope.dhikr = 'Allllllahhhh';
+    $scope.display = function(school) {
+      $scope.displayTitle = 'Demographics for ' + school;
+      $scope.daSchool = school;
     }
   });
 
