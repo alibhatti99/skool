@@ -12,7 +12,7 @@ var app = express();
 // });
 
 // connect to mongo database named "skooldb"
-mongoose.connect('mongodb://localhost/skooldb');
+//mongoose.connect('mongodb://localhost/skooldb');
 
 // configure our server with all the middleware and routing
 require('./config/middleware.js')(app, express);
